@@ -1,5 +1,6 @@
 # DBMS
 ER DIAGRAM AND FORMULATION
+
 The ER diagram of our database is shown as above. It has been designed and tweaked to fulfill the users’ needs and avoid additional irrelevant information. The diagram consists of four tables books, fines, circulation records, users and having three relations pay, issue/return and have. Each of these tables have different attributes and various constraints defined on them to ensure no information loss and easy retrieval. The details about various tables and their attributes are mentioned below:
 
 • Fines – Is related to users table by the relation pays. It consists of four attributes User_ID , Fine_ID , Fine_amount and Book_id. The fine_id acts as a primary key for this table and user_id acts as a foreign key in this table. According to user requirements user_id ,book_id and fine_id are not null and fine amount is fixed to greater than 0.
@@ -9,11 +10,14 @@ The ER diagram of our database is shown as above. It has been designed and tweak
 
 
 CHAPTER 2 : RELATIONAL DIAGRAM CONVERSION
+
   Fig 2. Relational diagram
+  
 The diagram shows the tables used in the database, along with their primary keys and foreign keys. The Books table is connected to the CirculationRecords and Fines tables via the Book_ID field, and the Users table is connected to the CirculationRecords and Fines tables via the User_ID field. The CirculationRecords table tracks the borrowing history of users, while the Fines table tracks any fines incurred by users. The Books and Users tables contain information about the books and users in the library, respectively. The CirculationRecords table has check constraints to ensure that the required fields are not null, and the Fines table has a check constraint to ensure that the fine amount is not negative. The Books and Users tables also have check constraints to ensure that certain fields are not null.
 
 
 CHAPTER 3 : NORMALIZATION
+
 Initially our design was not in any of the normal forms. Normalization is a process of organizing data in a database to eliminate redundancy and maintain data consistency. It is important in DBMS for the following reasons:
 • Reducing data redundancy: Normalization helps to eliminate data redundancy by dividing data into smaller, logical units. This saves storage space and reduces the chances of data inconsistencies.
 • Improving data consistency: Normalization ensures that data is consistent and accurate by preventing duplication and reducing the chances of conflicting data.
@@ -28,6 +32,7 @@ To make use of all these advantages we tried to convert our design to 3rd Normal
 
 
 CHAPTER 4: FUNCTIONAL DEPENDENCIES
+
 • Fine id-> fine amount
 • User id->Phone number
 • User id->Email
@@ -47,6 +52,7 @@ Aside from these all trivial dependencies hold( ie A->A)
 
 
 CHAPTER 5 : QUERIES AND OUTPUTS
+
 After creation of our relational diagram, we created our source code for the SQL database. The source code was kept as simple as possible and is attached below:
 -- Create Books table
 CREATE TABLE Books (
