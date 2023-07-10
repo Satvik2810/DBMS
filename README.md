@@ -1,4 +1,4 @@
-![image](https://github.com/Satvik2810/DBMS/assets/81152998/06534e7f-0d77-4e4e-b5bb-471f38f5c0fa)![image](https://github.com/Satvik2810/DBMS/assets/81152998/3acc4086-f4e9-4dc2-8c37-202edfa293fd)# DBMS
+# DBMS
 CHAPTER 1 :ER DIAGRAM AND FORMULATION
 
 ![image](https://github.com/Satvik2810/DBMS/assets/81152998/6048c47c-bc2a-40b8-95f4-7ca9f9687097)
