@@ -80,33 +80,55 @@ After populating the tables, we ran a few queries as requested by the user: 1. D
 
 
 2. Display all the books currently issued by users. The query for this is:
+
 SELECT Books.*
+
 FROM Books
+
 INNER JOIN CirculationRecords ON Books.Book_ID = CirculationRecords.Book_ID WHERE CirculationRecords.Return_Date = '1001-01-01';
+
 Here's a breakdown of the query:
+
 o SELECT Books.*: This statement selects all columns (denoted by the asterisk)
+
 from the "Books" table.
+
 o FROM Books: This specifies that the data is being pulled from the "Books"
 table.
+
 o INNER JOIN CirculationRecords ON Books.Book_ID =
+
 CirculationRecords.Book_ID: This specifies that the "Books" table is being joined with the "CirculationRecords" table using the "Book_ID" column as the join condition.
+
 o WHERE CirculationRecords.Return_Date = '1001-01-01': This filters the results by only selecting rows from the joined tables where the "Return_Date" column in the "CirculationRecords" table is equal to '1001-01-01'.
+
 o Therefore, this query will return all columns from the "Books" table for books that have a corresponding record in the "CirculationRecords" table where the return date is equal to '1001-01-01'. By default, all the books that are issued but are not returned yet have a return date vale “1001-01-01”. So we would get all books currently issued by the users.
+
 A figure of the output of the following query is shown below:
 
 ![image](https://github.com/Satvik2810/DBMS/assets/81152998/790cdbee-3e5e-49f6-8d89-3708f998d221)
 
 
 4. Query to calculate all the total fines of a user. The query for this is:
+   
 SELECT SUM(Fines.Fine_Amount) AS TotalFines
+
 FROM Fines
+
 INNER JOIN CirculationRecords ON Fines.Book_ID = CirculationRecords.Book_ID AND Fines.User_ID = CirculationRecords.User_ID
+
 INNER JOIN Users ON CirculationRecords.User_ID = Users.User_ID The idea behind this query is:
+
 o The FROM clause specifies that we're querying the Fines table, which presumably contains information about each fine, including the amount of the fine (Fine_Amount).
+
 o The INNER JOIN clauses join the Fines table with the CirculationRecords and Users tables.
+
 o The ON clause of the first INNER JOIN specifies that we want to join the Fines and CirculationRecords tables on two conditions: that the Book_ID in Fines matches the Book_ID in CirculationRecords, and that the User_ID in Fines matches the User_ID in CirculationRecords. This is to ensure that we're only looking at fines that were incurred by users who checked out books from the library.
+
 o The ON clause of the second INNER JOIN specifies that we want to join the CirculationRecords and Users tables on the User_ID column. This is so we can get information about the users who incurred the fines (e.g., their names, addresses, etc.).
+
 o The SELECT clause specifies that we want to select the sum of all Fine_Amount values in the resulting joined table, and give it an alias of TotalFines.
+
 o Putting it all together, the query will return a single row with a single column, which contains the total amount of fines paid by users for
 
 
