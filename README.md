@@ -1,5 +1,5 @@
 # DBMS
-ER DIAGRAM AND FORMULATION
+CHAPTER 1 :ER DIAGRAM AND FORMULATION
 
 The ER diagram of our database is shown as above. It has been designed and tweaked to fulfill the users’ needs and avoid additional irrelevant information. The diagram consists of four tables books, fines, circulation records, users and having three relations pay, issue/return and have. Each of these tables have different attributes and various constraints defined on them to ensure no information loss and easy retrieval. The details about various tables and their attributes are mentioned below:
 
