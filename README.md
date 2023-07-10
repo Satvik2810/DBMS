@@ -1,5 +1,8 @@
-# DBMS
+![image](https://github.com/Satvik2810/DBMS/assets/81152998/06534e7f-0d77-4e4e-b5bb-471f38f5c0fa)![image](https://github.com/Satvik2810/DBMS/assets/81152998/3acc4086-f4e9-4dc2-8c37-202edfa293fd)# DBMS
 CHAPTER 1 :ER DIAGRAM AND FORMULATION
+
+![image](https://github.com/Satvik2810/DBMS/assets/81152998/6048c47c-bc2a-40b8-95f4-7ca9f9687097)
+
 
 The ER diagram of our database is shown as above. It has been designed and tweaked to fulfill the users’ needs and avoid additional irrelevant information. The diagram consists of four tables books, fines, circulation records, users and having three relations pay, issue/return and have. Each of these tables have different attributes and various constraints defined on them to ensure no information loss and easy retrieval. The details about various tables and their attributes are mentioned below:
 
@@ -11,7 +14,8 @@ The ER diagram of our database is shown as above. It has been designed and tweak
 
 CHAPTER 2 : RELATIONAL DIAGRAM CONVERSION
 
-  Fig 2. Relational diagram
+![image](https://github.com/Satvik2810/DBMS/assets/81152998/38ebf2e1-2ee8-4159-9d81-80b3ba0a6447)
+
   
 The diagram shows the tables used in the database, along with their primary keys and foreign keys. The Books table is connected to the CirculationRecords and Fines tables via the Book_ID field, and the Users table is connected to the CirculationRecords and Fines tables via the User_ID field. The CirculationRecords table tracks the borrowing history of users, while the Fines table tracks any fines incurred by users. The Books and Users tables contain information about the books and users in the library, respectively. The CirculationRecords table has check constraints to ensure that the required fields are not null, and the Fines table has a check constraint to ensure that the fine amount is not negative. The Books and Users tables also have check constraints to ensure that certain fields are not null.
 
@@ -95,9 +99,12 @@ ALTER TABLE Users ADD CHECK (Username IS NOT NULL); ALTER TABLE Users ADD CHECK 
 
 
 After creation of the structure of these tables we populated the database with some sample data as shown in the figure below:
- Fig 3. Sample data in each table
+
+![image](https://github.com/Satvik2810/DBMS/assets/81152998/0441a045-e31e-47cc-a364-35368c28d1d2)
+
 After populating the tables, we ran a few queries as requested by the user: 1. Display all books available in library:
-Fig 4. Displaying all books in the library
+
+![image](https://github.com/Satvik2810/DBMS/assets/81152998/1551dcb6-4b01-4516-a517-acad91502595)
 
 
 2. Display all the books currently issued by users. The query for this is:
@@ -114,7 +121,8 @@ CirculationRecords.Book_ID: This specifies that the "Books" table is being joine
 o WHERE CirculationRecords.Return_Date = '1001-01-01': This filters the results by only selecting rows from the joined tables where the "Return_Date" column in the "CirculationRecords" table is equal to '1001-01-01'.
 o Therefore, this query will return all columns from the "Books" table for books that have a corresponding record in the "CirculationRecords" table where the return date is equal to '1001-01-01'. By default, all the books that are issued but are not returned yet have a return date vale “1001-01-01”. So we would get all books currently issued by the users.
 A figure of the output of the following query is shown below:
-Fig 5. All books currently issued by users query output
+
+![image](https://github.com/Satvik2810/DBMS/assets/81152998/790cdbee-3e5e-49f6-8d89-3708f998d221)
 
 
 4. Query to calculate all the total fines of a user. The query for this is:
@@ -132,5 +140,6 @@ o Putting it all together, the query will return a single row with a single colu
 
 overdue books, calculated by summing up the Fine_Amount values in the Fines table that match the specified conditions in the INNER JOIN clauses.
 A sample run of this query with output is attached as shown below:
-Fig 6. Display of total fines of a user
+
+![image](https://github.com/Satvik2810/DBMS/assets/81152998/ba254283-241c-4fb3-9be5-14c26d48454a)
  
