@@ -1,4 +1,5 @@
-# DBMS
+# Library Management System : DBMS
+
 CHAPTER 1 :ER DIAGRAM AND FORMULATION
 
 ![image](https://github.com/Satvik2810/DBMS/assets/81152998/6048c47c-bc2a-40b8-95f4-7ca9f9687097)
